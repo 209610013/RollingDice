@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Roller</title>
+</head>
+<body>
+    <h1>Dice Roller</h1>
+    <p>Click the button to roll two dice:</p>
+    <button id="rollButton">Roll Dice</button>
+    <p>Dice 1: <span id="dice1Value"></span></p>
+    <p>Dice 2: <span id="dice2Value"></span></p>
+    <p>Total: <span id="totalValue"></span></p>
+
+    <script>
+        // Function to generate a random number between 1 and 6 (inclusive) for a single die roll
+        function rollDie() {
+            return Math.floor(Math.random() * 6) + 1;
+        }
+
+        // Function to simulate rolling two dice and update the display
+        function rollDice() {
+            var dice1 = rollDie();
+            var dice2 = rollDie();
+            var total = dice1 + dice2;
+
+            // Update the display with the values
+            document.getElementById("dice1Value").textContent = dice1;
+            document.getElementById("dice2Value").textContent = dice2;
+            document.getElementById("totalValue").textContent = total;
+        }
+
+        // Attach the rollDice function to the button click event
+        document.getElementById("rollButton").addEventListener("click", rollDice);
+    </script>
+</body>
+</html>
